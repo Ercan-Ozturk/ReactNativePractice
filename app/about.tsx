@@ -1,5 +1,6 @@
 import { Text, View } from "react-native";
 import "../global.css";
+import { useStore } from "./store";
 
 export default function About() {
   return (
@@ -11,6 +12,8 @@ export default function About() {
       }}
     >
       <Text>About Page</Text>
+
+      <Text>Current count is {useStore().count}</Text>
     </View>
   );
 }
