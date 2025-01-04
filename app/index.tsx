@@ -1,6 +1,6 @@
 import { Pressable, Text, TextInput, View } from "react-native";
 import "../global.css";
-import { Counter, useStore } from "./store";
+import { Counter, useStore } from "../stores/store";
 import { Link } from "expo-router";
 import Button from "@/components/Button";
 import TODOBox from "@/components/TODOBox";

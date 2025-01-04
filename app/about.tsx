@@ -1,6 +1,6 @@
 import { Text, View } from "react-native";
 import "../global.css";
-import { useStore } from "./store";
+import { useStore } from "../stores/store";
 import Card from "@/components/Card";
 
 export default function About() {
