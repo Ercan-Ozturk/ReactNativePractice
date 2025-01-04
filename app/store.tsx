@@ -3,14 +3,14 @@ import "../global.css";
 import React from "react";
 type Store = {
   count: number;
-  todo: string;
   inc: () => void;
   dec: () => void;
+  todo: string;
   save_todo: (label: string) => void;
 };
 
 export const useStore = create<Store>()((set) => ({
-  count: 1,
+  count: 0,
   inc: () => set((state) => ({ count: state.count + 1 })),
   dec: () => set((state) => ({ count: state.count - 1 })),
   todo: "",
