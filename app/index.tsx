@@ -16,7 +16,7 @@ export default function Index() {
       }}
     >
       <Text>Index Page</Text>
-      <TODOBox onPress={() => alert("Button Pressed")} />
+      <TODOBox />
       <Counter />
       <Link href="/about" asChild>
         <Pressable className="bg-blue-500 hover:bg-blue-700  py-2 px-4 border border-blue-700 rounded">
