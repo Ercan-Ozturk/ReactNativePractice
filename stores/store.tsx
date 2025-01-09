@@ -1,4 +1,5 @@
 import { create } from "zustand";
+import { persist } from "zustand/middleware";
 import "../global.css";
 import React from "react";
 type Store = {
@@ -9,13 +10,20 @@ type Store = {
   save_todo: (label: string) => void;
 };
 
-export const useStore = create<Store>()((set) => ({
-  count: 0,
-  inc: () => set((state) => ({ count: state.count + 1 })),
-  dec: () => set((state) => ({ count: state.count - 1 })),
-  todo: "",
-  save_todo: (label: string) => set((state) => ({ todo: label })),
-}));
+export const useStore = create<Store>()(
+  persist(
+    (set) => ({
+      count: 0,
+      inc: () => set((state) => ({ count: state.count + 1 })),
+      dec: () => set((state) => ({ count: state.count - 1 })),
+      todo: "",
+      save_todo: (label: string) => set((state) => ({ todo: label })),
+    }),
+    {
+      name: "count-store",
+    }
+  )
+);
 
 export function Counter() {
   const { count, inc, dec } = useStore();

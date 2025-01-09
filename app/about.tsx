@@ -7,6 +7,7 @@ import { useTodoStore } from "@/stores/todoStore";
 export default function About() {
   const count = useStore().count;
   const todo = useTodoStore().todo;
+  const todo_array = useTodoStore().todo_array;
   return (
     <View
       style={{
@@ -16,10 +17,13 @@ export default function About() {
         gap: 5,
       }}
     >
-      <Text>About Page</Text>
-      <Card label={"Current count is: " + count}></Card>
+      <div className="flex flex-col gap-4">
+        <Text>About Page</Text>
+        <Card label={"Current count is: " + count}></Card>
 
-      <Card label={"Current todo is: " + todo}></Card>
+        <Card label={"Current todo is: " + todo}></Card>
+        {/* <Card label={"Current todo array is: " + todo_array}></Card> */}
+      </div>
     </View>
   );
 }
